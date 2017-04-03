@@ -75,7 +75,7 @@ class DocumentParser(props: Properties) {
       if (x.contains("\\")) 
         "\"" + x.replace("\\", "\\\\\\\\").replace("\"", "\\\\\"") + "\""
       else 
-        "\"" + x + "\""
+        "\"" + x.replace("\"", "\\\\\"") + "\""
       ).mkString("{", ",", "}")
   }
 
